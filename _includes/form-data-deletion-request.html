@@ -1,8 +1,5 @@
 {%- if site.formspree_endpoint_data_deletion_request -%}
-<form
-action="https://formspree.io/f/{{- site.formspree_endpoint_data_deletion_request -}}"
-method="POST"
->
+<form action="https://formspree.io/f/{{- site.formspree_endpoint_data_deletion_request -}}" method="POST">
 <input type="hidden" name="_subject" value="New Data Deletion Request from {{- site.title -}}" />
 <table>
   <tr>
