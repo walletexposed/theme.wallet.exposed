@@ -1,8 +1,5 @@
 {%- if site.formspree_endpoint_takedown_request -%}
-<form
-action="https://formspree.io/f/{{- site.formspree_endpoint_takedown_request -}}"
-method="POST"
->
+<form action="https://formspree.io/f/{{- site.formspree_endpoint_takedown_request -}}" method="POST">
 <input type="hidden" name="_subject" value="New Takedown Request from {{- site.title -}}" />
 <table>
   <tr>
