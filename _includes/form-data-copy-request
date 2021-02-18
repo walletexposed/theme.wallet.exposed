@@ -1,0 +1,46 @@
+{%- if site.formspree_endpoint_data_copy_request -%}
+<form
+action="https://formspree.io/f/{{- site.formspree_endpoint_data_copy_request -}}"
+method="POST"
+>
+<input type="hidden" name="_subject" value="New Data Copy Request from {{- site.title -}}" />
+<table>
+  <tr>
+    <td>First Name:&nbsp;&#9;</td>
+    <td>
+      <input type="text" name="First Name">
+    </td>
+  </tr>
+  <tr>
+    <td>Last Name:&nbsp;&#9;</td>
+    <td>
+      <input type="text" name="Last Name">
+    </td>
+  </tr>
+  <tr>
+    <td>Email:&nbsp;&#9;</td>
+    <td>
+      <input type="email" name="_replyto" required>
+    </td>
+  </tr>
+  <tr>
+    <td>Request a copy of your personal data&nbsp;&#9;</td>
+    <td>
+      <input type="checkbox" id="copy" name="Copy" value="YES">
+    </td>
+  </tr>
+  <tr>
+    <td>I agree to the Privacy Policy and Terms of Use&nbsp;&#9;</td>
+    <td>
+      <input type="checkbox" id="agree" name="Agree" value="YES">
+    </td>
+  </tr>
+</table>
+<br />
+{%- if site.captcha == true -%}
+{%- include captcha-body.html -%}
+{%- endif -%}
+<br />
+<input type="submit" value="Send">
+</form>
+{%- endif -%}
