@@ -1,8 +1,5 @@
 {%- if site.formspree_endpoint_tip -%}
-<form
-action="https://formspree.io/f/{{- site.formspree_endpoint_tip -}}"
-method="POST"
->
+<form action="https://formspree.io/f/{{- site.formspree_endpoint_tip -}}" method="POST">
 <input type="hidden" name="_subject" value="New Tip from {{- site.title -}}" />
 <table>
   <tr>
