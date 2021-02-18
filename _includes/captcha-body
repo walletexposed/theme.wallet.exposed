@@ -1,0 +1,5 @@
+{%- if site.captcha_site_key -%}
+<!-- reCAPTCHA (BODY) -->
+<div class="g-recaptcha" data-sitekey="{{ site.captcha_site_key }}"></div>
+<!-- End reCAPTCHA (BODY) -->
+{%- endif -%}
