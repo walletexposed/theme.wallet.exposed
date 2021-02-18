@@ -1,0 +1,64 @@
+{%- if site.formspree_endpoint_takedown_request -%}
+<form
+action="https://formspree.io/f/{{- site.formspree_endpoint_takedown_request -}}"
+method="POST"
+>
+<input type="hidden" name="_subject" value="New Takedown Request from {{- site.title -}}" />
+<table>
+  <tr>
+    <td>First Name:&nbsp;&#9;</td>
+    <td>
+      <input type="text" name="First Name">
+    </td>
+  </tr>
+  <tr>
+    <td>Last Name:&nbsp;&#9;</td>
+    <td>
+      <input type="text" name="Last Name">
+    </td>
+  </tr>
+  <tr>
+    <td>Email:&nbsp;&#9;</td>
+    <td>
+      <input type="email" name="_replyto" required>
+    </td>
+  </tr>
+  <tr>
+    <td>Relevant URL:&nbsp;&#9;</td>
+    <td>
+      <input type="text" name="URL" required>
+    </td>
+  </tr>
+  <tr>
+    <td>Detailed Explanation of Request:&nbsp;&#9;</td>
+    <td>
+      <textarea name="Message" required></textarea>
+    </td>
+  </tr>
+  <tr>
+    <td>I certify that all of the above information is factual and complete&nbsp;&#9;</td>
+    <td>
+      <input type="checkbox" id="takedown" name="Takedown" value="YES">
+    </td>
+  </tr>
+  <tr>
+    <td>I agree to the Privacy Policy and Terms of Use&nbsp;&#9;</td>
+    <td>
+      <input type="checkbox" id="agree" name="Agree" value="YES">
+    </td>
+  </tr>
+  <tr>
+    <td>I understand that any abuse of this form may lead to banning and/or further investigation&nbsp;&#9;</td>
+    <td>
+      <input type="checkbox" id="abuse" name="Abuse" value="YES">
+    </td>
+  </tr>
+</table>
+<br />
+{%- if site.captcha == true -%}
+{%- include captcha-body.html -%}
+{%- endif -%}
+<br />
+<input type="submit" value="Send">
+</form>
+{%- endif -%}
